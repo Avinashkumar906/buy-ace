@@ -1,0 +1,17 @@
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Target #
+target/
+
+
+# Idea IDE confi #
+.idea
+
+
