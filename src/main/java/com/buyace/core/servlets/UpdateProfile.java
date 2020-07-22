@@ -1,18 +1,15 @@
-package com.servlets;
+package com.buyace.core.servlets;
 
-import java.io.File;
 import java.io.IOException;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
 
 import org.hibernate.Session;
 
-import com.beans.Customer;
-import com.beans.Product;
+import com.buyace.core.beans.Customer;
+import com.buyace.core.beans.Product;
 
 public class UpdateProfile extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -28,7 +25,7 @@ public class UpdateProfile extends HttpServlet {
 		
 		Customer customer = new Customer(userName, userMail, mobile, password, gender);
 		customer.setUserid(userid);
-		Session session = com.hibernate.util.HibernateUtil.getSessionFactory().openSession();
+		Session session = com.buyace.core.hibernate.util.HibernateUtil.getSessionFactory().openSession();
 		session.beginTransaction();
 		session.update(customer);
 		session.getTransaction().commit();

@@ -1,4 +1,4 @@
-package com.servlets;
+package com.buyace.core.servlets;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -6,8 +6,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.beans.OrderHistory;
-import com.mail.util.*;
+import com.buyace.core.beans.OrderHistory;
+import com.buyace.core.mail.util.*;
 
 public class Confirmation extends HttpServlet {
 	private static final long serialVersionUID = 1L;

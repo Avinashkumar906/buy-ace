@@ -1,17 +1,15 @@
-package com.servlets;
+package com.buyace.core.servlets;
 
-import java.io.File;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
 
 import org.hibernate.Session;
 
-import com.beans.Product;
+import com.buyace.core.beans.Product;
 
 @MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, // 2MB
 maxFileSize = 1024 * 1024 * 10, // 10MB
@@ -30,7 +28,7 @@ public class Updateitem extends HttpServlet {
 		
 		Product product = new Product(productName, companyName, price, description, category);
 		product.setProductId(id);
-		Session session = com.hibernate.util.HibernateUtil.getSessionFactory().openSession();
+		Session session = com.buyace.core.hibernate.util.HibernateUtil.getSessionFactory().openSession();
 		session.beginTransaction();
 		session.update(product);
 		session.getTransaction().commit();

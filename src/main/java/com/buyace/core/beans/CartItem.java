@@ -1,4 +1,4 @@
-package com.beans;
+package com.buyace.core.beans;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;

@@ -1,14 +1,11 @@
-package com.dao;
+package com.buyace.core.dao;
 
 import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-
-import com.beans.CartItem;
-import com.beans.OrderHistory;
-import com.beans.Product;
-import com.hibernate.util.HibernateUtil;
+import com.buyace.core.beans.OrderHistory;
+import com.buyace.core.hibernate.util.HibernateUtil;
 
 public class OrderHistoryDao {
 	public static List<OrderHistory> fetchOrderHistory(int userId) {

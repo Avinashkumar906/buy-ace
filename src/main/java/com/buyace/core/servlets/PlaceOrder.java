@@ -1,4 +1,4 @@
-package com.servlets;
+package com.buyace.core.servlets;
 
 import java.io.IOException;
 import java.util.*;
@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import org.hibernate.Session;
 
-import com.beans.*;
+import com.buyace.core.beans.*;
 
 public class PlaceOrder extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -22,7 +22,7 @@ public class PlaceOrder extends HttpServlet {
 		OrderHistory orderHistory = new OrderHistory(customer.getName(), customer.getUserid(), request.getParameter("address"), customer.getEmail(),cartItem );
 		orderHistory.setOrderDate(new Date());
 		orderHistory.setTotal(Double.parseDouble(request.getParameter("total")));
-		Session sesion = com.hibernate.util.HibernateUtil.getSessionFactory().openSession();
+		Session sesion = com.buyace.core.hibernate.util.HibernateUtil.getSessionFactory().openSession();
 		sesion.beginTransaction();
 		int orderId = (Integer) sesion.save(orderHistory);
 		sesion.getTransaction().commit();

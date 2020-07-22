@@ -1,16 +1,13 @@
-package com.dao;
+package com.buyace.core.dao;
 
 import java.util.Iterator;
 import java.util.List;
 
-import org.hibernate.Query;
-import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import com.beans.Customer;
-import com.beans.Product;
-import com.hibernate.util.HibernateUtil;
+import com.buyace.core.beans.Customer;
+import com.buyace.core.hibernate.util.HibernateUtil;
 
 public class CustomerDao {
 	

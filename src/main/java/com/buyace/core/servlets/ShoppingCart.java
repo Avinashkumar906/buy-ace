@@ -1,17 +1,14 @@
-package com.servlets;
+package com.buyace.core.servlets;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-import com.beans.CartItem;
-import com.beans.Product;
+import com.buyace.core.beans.CartItem;
+import com.buyace.core.beans.Product;
 
 
 
@@ -22,7 +19,7 @@ public class ShoppingCart extends HttpServlet {
 		HttpSession session = request.getSession(true);
 		List<CartItem> cartItem = new ArrayList<CartItem>();
 		cartItem = (ArrayList<CartItem>)session.getAttribute("cartitem");
-		Product product = com.dao.ProductDao.getProduct(Integer.parseInt(request.getParameter("id")));
+		Product product = com.buyace.core.dao.ProductDao.getProduct(Integer.parseInt(request.getParameter("id")));
 		if(cartItem==null){
 			cartItem = new ArrayList<CartItem>();
 			cartItem.add(new CartItem(product.getProductId(), product.getProductName(), product.getCompanyName(), product.getPrice()));

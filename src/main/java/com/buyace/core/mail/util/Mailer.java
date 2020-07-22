@@ -1,4 +1,4 @@
-package com.mail.util;
+package com.buyace.core.mail.util;
 
 import java.util.Properties;    
 import javax.mail.*;    

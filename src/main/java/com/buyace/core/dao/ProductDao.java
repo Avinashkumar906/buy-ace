@@ -1,9 +1,9 @@
-package com.dao;
+package com.buyace.core.dao;
 
 import java.util.*;
 import org.hibernate.*;
-import com.beans.*;
-import com.hibernate.util.*;
+import com.buyace.core.beans.*;
+import com.buyace.core.hibernate.util.*;
 
 public class ProductDao {
 	

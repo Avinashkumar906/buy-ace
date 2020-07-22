@@ -1,4 +1,4 @@
-<%@page import="com.dao.CustomerDao"%>
+<%@page import="com.buyace.core.dao.CustomerDao"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" errorPage="error.jsp"%>
 <!DOCTYPE html>
@@ -13,7 +13,7 @@
   </head>
   <body>
   <%@ include file="header.jsp" %>
-	<jsp:useBean id="userbean" class="com.beans.Customer"></jsp:useBean>
+	<jsp:useBean id="userbean" class="com.buyace.core.beans.Customer"></jsp:useBean>
 	<jsp:setProperty property="*" name="userbean"/>
   <%
 	int i = CustomerDao.register(userbean);

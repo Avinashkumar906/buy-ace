@@ -1,7 +1,7 @@
 <%@page import="java.util.ListIterator"%>
 <%@page import="java.util.List"%>
-<%@page import="com.beans.*"%>
-<%@page import="com.dao.ProductDao"%>
+<%@page import="com.buyace.core.beans.*"%>
+<%@page import="com.buyace.core.dao.ProductDao"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" errorPage="error.jsp"%>
 <!DOCTYPE html>

@@ -13,7 +13,7 @@
         <property name="hibernate.connection.password">34a8982a74b513a2c4c430f86037e40f69281154cb3c64f52c054e29967eb4bd</property>
 
         <!-- SQL dialect -->
-        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL82Dialect</property>
 
         <!-- Print executed SQL to stdout -->
         <property name="show_sql">true</property>
@@ -22,7 +22,9 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
 
         <!-- Annotated entity classes -->
-        <mapping class="com.javacodegeeks.example.Car"/>
+<!--        <mapping class="com.buyace.core.beans.Product"/>-->
+<!--        <mapping class="com.buyace.core.beans.Customer"/>-->
+<!--        <mapping class="com.buyace.core.beans.OrderHistory"/>-->
 
     </session-factory>
 </hibernate-configuration>

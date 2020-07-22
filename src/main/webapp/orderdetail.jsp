@@ -1,9 +1,9 @@
-<%@page import="com.dao.OrderHistoryDao"%>
-<%@page import="com.dao.CustomerDao"%>
+<%@page import="com.buyace.core.dao.OrderHistoryDao"%>
+<%@page import="com.buyace.core.dao.CustomerDao"%>
 <%@page import="java.util.ListIterator"%>
 <%@page import="java.util.List"%>
-<%@page import="com.dao.ProductDao"%>
-<%@page import="com.beans.Product"%>
+<%@page import="com.buyace.core.dao.ProductDao"%>
+<%@page import="com.buyace.core.beans.Product"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" errorPage="error.jsp"%>
 <!DOCTYPE html>

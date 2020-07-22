@@ -1,4 +1,4 @@
-package com.listners;
+package com.buyace.core.listners;
 
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;

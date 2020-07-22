@@ -1,17 +1,13 @@
-package com.servlets;
+package com.buyace.core.servlets;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-import com.beans.CartItem;
-import com.beans.Product;
+import com.buyace.core.beans.CartItem;
 
 
 

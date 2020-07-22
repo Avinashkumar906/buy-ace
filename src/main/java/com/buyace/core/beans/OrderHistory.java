@@ -1,4 +1,4 @@
-package com.beans;
+package com.buyace.core.beans;
 
 import java.util.ArrayList;
 import java.util.Date;
