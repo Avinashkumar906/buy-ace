@@ -1,4 +1,4 @@
-package com.filters;
+package com.buyace.core.filters;
 
 import java.io.IOException;
 import javax.servlet.Filter;
