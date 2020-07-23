@@ -29,5 +29,6 @@ target/
 # Idea IDE confi #
 .idea
 .classpath
+.settings
 
 
