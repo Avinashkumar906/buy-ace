@@ -9,11 +9,11 @@
   <url>http://maven.apache.org</url>
   <dependencies>
       <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
-      <dependency>
+      <!--<dependency>
           <groupId>org.hibernate</groupId>
           <artifactId>hibernate-entitymanager</artifactId>
           <version>5.4.18.Final</version>
-      </dependency>
+      </dependency>-->
 
       <dependency>
           <groupId>junit</groupId>
@@ -23,9 +23,9 @@
         </dependency>
       <!--   https://mvnrepository.com/artifact/org.postgresql/postgresql -->
       <dependency>
-          <groupId>postgresql</groupId>
+          <groupId>org.postgresql</groupId>
           <artifactId>postgresql</artifactId>
-          <version>9.0-801.jdbc4</version>
+          <version>42.2.6</version>
       </dependency>
       <!-- https://mvnrepository.com/artifact/javax.mail/mail -->
       <dependency>

@@ -59,8 +59,8 @@ public class CartItem {
 		super();
 	}
 	
-	@Override
-	public String toString() {
-		return "<tr class='px-3 text-center h4'><td>"+productId+"</th><th>"+productName+"</th><th>"+quantity+"</th><th>"+companyName+"</th><th>"+price+"</th><th><a href='RemoveCartItem?id="+productId+" 'class='btn btn-danger'>Remove</a></th></tr>";
-	}
+//	@Override
+//	public String toString() {
+//		return "<tr class='px-3 text-center h4'><td>"+productId+"</th><th>"+productName+"</th><th>"+quantity+"</th><th>"+companyName+"</th><th>"+price+"</th><th><a href='RemoveCartItem?id="+productId+" 'class='btn btn-danger'>Remove</a></th></tr>";
+//	}
 }

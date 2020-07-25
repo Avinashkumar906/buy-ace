@@ -1,5 +1,6 @@
 package com.buyace.core.dao;
 
+import java.io.Console;
 import java.util.Iterator;
 import java.util.List;
 
@@ -15,7 +16,9 @@ public class CustomerDao {
 		if(validateUser(user)==null) {
 			int i = 0;
 			SessionFactory factory = HibernateUtil.getSessionFactory();
+			System.out.println(user);
 			Session session = factory.openSession();
+			//user.setRole("Admin");
 			session.beginTransaction();
 			i=(Integer)session.save(user);
 			session.getTransaction().commit();
@@ -28,6 +31,7 @@ public class CustomerDao {
 	
 	public static Customer validateUser(Customer user) {
 		SessionFactory factory = HibernateUtil.getSessionFactory();
+		System.out.println(user);
 		Session session = factory.openSession();
 		
 		String email = user.getEmail();
@@ -35,7 +39,7 @@ public class CustomerDao {
 		
 		session.beginTransaction();
 		List<Customer> rs = session.createQuery("from Customer where usermail='"+email+"'and userpass='"+userpass+"'").list();
-		
+		System.out.println(rs);
 		session.getTransaction().commit();
 		session.close();
 		if(rs.size() != 0)

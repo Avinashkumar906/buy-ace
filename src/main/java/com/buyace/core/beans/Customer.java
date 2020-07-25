@@ -5,8 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "customer")
 public class Customer {
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
@@ -94,9 +96,9 @@ public class Customer {
 		this.role = role;
 	}
 
-	@Override
+	/*@Override
 	public String toString() {
 		return "<tr class='px-3 text-center h4'><td>"+userid+"</th><th>"+name+"</th><th>"+mobile+"</th><th>"+gender+"</th><th>"+role+"</th><th>"+email+"</th><th><a href='RemoveCustomer?id="+userid+" 'class='btn btn-danger'>Remove</a></th></tr>";
-	}
+	}*/
 		
 }

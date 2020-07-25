@@ -76,13 +76,13 @@ public class Product {
 	public Product() {
 		super();
 	}
-	@Override
-	public String toString() {
-		return "Product [productId=" + productId + ", productName="
-				+ productName + ", companyName=" + companyName + ", price="
-				+ price + ", description=" + description + ", category="
-				+ category + "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "Product [productId=" + productId + ", productName="
+//				+ productName + ", companyName=" + companyName + ", price="
+//				+ price + ", description=" + description + ", category="
+//				+ category + "]";
+//	}
 	
 	
 	
