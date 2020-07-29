@@ -11,6 +11,7 @@
         <property name="hibernate.connection.url">jdbc:postgresql://ec2-18-214-119-135.compute-1.amazonaws.com:5432/dd97h7i728fdat?sslfactory=org.postgresql.ssl.NonValidatingFactory&amp;ssl=true&amp;sslmode=require</property>
         <property name="hibernate.connection.username">gdsigcqduhwerj</property>
         <property name="hibernate.connection.password">34a8982a74b513a2c4c430f86037e40f69281154cb3c64f52c054e29967eb4bd</property>
+        <property name="hibernate.current_session_context_class">thread</property>
 
         <!-- SQL dialect -->
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
@@ -21,12 +22,6 @@
 
         <!-- Update database on startup -->
         <property name="hibernate.hbm2ddl.auto">update</property>
-
-        <!-- Annotated entity classes -->
-       <!-- <mapping class="com.buyace.core.beans.Product" ></mapping> -->
-       <!-- <mapping class="com.buyace.core.beans.Customer" ></mapping> -->
-       <!-- <mapping class="com.buyace.core.beans.OrderHistory" ></mapping> -->
-       <!--  <mapping class="com.buyace.core.beans.Carttem"></mapping> -->
 
     </session-factory>
 </hibernate-configuration>

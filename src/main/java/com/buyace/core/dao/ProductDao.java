@@ -13,7 +13,7 @@ public class ProductDao {
 		
 		session.beginTransaction();
 		List<Product> rs = session.createQuery("from Product").list();
-		
+		System.out.print(rs);
 		if(rs.size() != 0)
 		{
 			return rs;

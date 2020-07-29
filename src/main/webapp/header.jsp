@@ -64,5 +64,3 @@
   	</div>
   </nav>
   <!--Nav bar ends here   -->
-	<div class="container my-3" style='min-height:62vh;'>
-		<div class="row">

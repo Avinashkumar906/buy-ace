@@ -1,6 +1,4 @@
-  </div>
-  </div>
-  
+<!--footer starts here   -->
   <footer>
     <div class="container-fluid bg-dark py-3">
     <div class="fluid">
@@ -38,3 +36,4 @@
     </div>
     </div>
   </footer>
+  <!--footer ends here   -->
