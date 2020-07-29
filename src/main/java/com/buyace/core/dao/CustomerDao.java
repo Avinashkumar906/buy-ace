@@ -18,7 +18,7 @@ public class CustomerDao {
 			SessionFactory factory = HibernateUtil.getSessionFactory();
 			System.out.println(user);
 			Session session = factory.openSession();
-			//user.setRole("Admin");
+			user.setRole("Admin");
 			session.beginTransaction();
 			i=(Integer)session.save(user);
 			session.getTransaction().commit();

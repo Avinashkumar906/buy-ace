@@ -3,6 +3,7 @@ package com.buyace.core.servlets;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,6 +16,7 @@ import com.buyace.core.beans.Product;
 @MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, // 2MB
 maxFileSize = 1024 * 1024 * 10, // 10MB
 maxRequestSize = 1024 * 1024 * 50) // 50MB
+@WebServlet("/Uploaditem")
 public class Uploaditem extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -34,7 +36,7 @@ public class Uploaditem extends HttpServlet {
 		if(id>0){
 			for(Part part : request.getParts()) {
 			System.out.println(part.getContentType());
-		    part.write("D:/Sneha JAVA Pgms/E-commerce/WebContent/images/"+id+".jpg");
+		    part.write("C:/POCs/buyaceproject/"+id+".jpg");
 		    //part.
 			}
 		}

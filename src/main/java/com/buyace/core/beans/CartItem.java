@@ -2,8 +2,10 @@ package com.buyace.core.beans;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.Table;
 
 @Embeddable
+@Table(name = "cartItem")
 public class CartItem {
 	@Column(name="productId",length=6)
 	private int productId;
