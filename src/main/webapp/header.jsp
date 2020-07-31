@@ -26,12 +26,21 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto w-100">
                 <li class="nav-item">
-                    <a class="nav-link" href="home.jsp">Products</a>
+                    <a class="nav-link" href="home.jsp">Phone</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="adminHome.jsp">Admin</a>
+                    <a class="nav-link" href="adminHome.jsp">Plan</a>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Deal</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Accessory</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact Us</a>
+                </li>
+                <li class="nav-item dropdown d-none">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Category
                     </a>
@@ -48,7 +57,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="about.jsp">About</a>
+                    <a class="nav-link" href="about.jsp">About us</a>
                 </li>
                 <li class="nav-item alignment-custom">
                     <a class="btn btn-warning" href="checkout.jsp">
