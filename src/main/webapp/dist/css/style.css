@@ -1,39 +1,94 @@
-body{
-    background-image: linear-gradient(rgba(22,22,22,.4), rgba(22,22,22,.4)), url('./dist/images/home.jpg');
-    background-size:cover;
-    background-attachment:fixed;
+html,head,body{
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 .main-section{
     min-height:100vh;
 }
+
 .alignment-custom{
     margin-left: auto!important;
 }
-
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-
-  /* Center slide text vertically */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
+/* carousel fix */
+.carousel .card{
+	border-radius: 0px;
 }
-.carousel-item-holder{
+.carousel .card .card-img-overlay {
     position: absolute;
-    left: 10%;
-    text-align: left;
+    top: 40%;
+	left: 0;
+	width: 100%;
+	max-width: 600px;
+    transform: translateY(-50%);
+    padding: 1.25rem;
 }
+/* carousel fix */
+.pt-40{
+    padding-top: 40px;
+}
+.pb-40{
+    padding-bottom: 40px;
+}
+.mt-40{
+    margin-top: 40px;
+}
+.mb-40{
+    margin-bottom: 40px;
+}
+.pt-20{
+    padding-top: 20px;
+}
+.pb-20{
+    padding-bottom: 20px;
+}
+.mt-20{
+    margin-top: 20px;
+}
+.mb-20{
+    margin-bottom: 20px;
+}
+
+/* testimnial starts*/
+.bubble blockquote {
+	background: #fff;
+	padding: 60px;
+	position: relative;
+	border: none;
+	border-radius: 8px;
+	font-size: 1.25em;
+}
+.bubble blockquote:before, .bubble blockquote:after {
+	content: "\201C";
+	position: absolute;
+	font-size: 80px;
+	padding: 10px;
+	line-height: 1;
+}
+.bubble blockquote:before {
+	top: 0;
+	left: 10px;
+}
+.bubble blockquote:after {
+	content: "\201D";
+	right: 10px;
+	bottom: -.5em;
+}
+.bubble div {
+	width: 0;
+	height: 0;
+	border-left: 0 solid transparent;
+	border-right: 20px solid transparent;
+	border-top: 20px solid #fff;
+	margin: 0 0 0 60px;
+	margin-bottom: 10px;
+}
+.bubble cite {
+	padding-left: 20px;
+	font-size: 1.25em;
+}
+
+/* testimonial end */
 @media only screen and (max-width: 768px) {
     .alignment-custom{
         margin:0 auto!important;
