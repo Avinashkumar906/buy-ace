@@ -7,6 +7,7 @@ import org.hibernate.cfg.Configuration;
 import com.buyace.core.beans.Product;
 import com.buyace.core.beans.CartItem;
 import com.buyace.core.beans.Customer;
+import com.buyace.core.beans.Deals;
 import com.buyace.core.beans.OrderHistory;
 
 public class HibernateUtil {
@@ -20,6 +21,7 @@ public class HibernateUtil {
 					.addAnnotatedClass(Product.class)
 					.addAnnotatedClass(OrderHistory.class)
 					.addAnnotatedClass(CartItem.class)
+					.addAnnotatedClass(Deals.class)
 					.buildSessionFactory();
 		} catch (Throwable ex) {
 			ex.printStackTrace();
