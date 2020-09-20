@@ -13,10 +13,10 @@
                   </span>  
                 </div>
                 <div>
-                  <span class='text-light h3'>
+                  <span class='text-light h3 ml-2'>
                     <b>E-commerce</b>
                   </span><br/>
-                  <span class='text-light h6'>
+                  <span class='text-light h6 ml-2'>
                     buyace@buyace.com
                   </span>
                 </div>
@@ -27,19 +27,19 @@
         <div class="col-md-8 py-1 ">
           <div class="row">
             <div class="col-12 text-right">
-              <a href="home.jsp" class="text-light h4 bold px-2"><i class="fas fa-home"> Home</i> </a>
+              <a href="/index.jsp" class="text-light h4 bold mr-2"><i class="fas fa-home"> Home</i> </a>
             </div>
             <div class="col-12 text-right">
-              <span class="text-light">Phone</span>
-              <span class="text-light">Plan</span>
-              <span class="text-light">Deal</span>
-              <span class="text-light">Accessory</span>
-              <span class="text-light">Contact</span>
+              <span class="text-light">Phone | </span>
+              <span class="text-light">Plan | </span>
+              <span class="text-light">Deal | </span>
+              <span class="text-light">Accessory | </span>
+              <span class="text-light mr-2">Contact</span>
             </div>
           </div>
         </div>
       </div>
-      <h6 class="my-0 py-0 text-light text-center"> &#169 E-commerce 2018. All right reserved. </h6>
+      <h6 class="my-0 py-0 text-light text-center"><i>&#169 E-commerce 2018. All right reserved.</i></h6>
     </div>
   </div>
 </footer>

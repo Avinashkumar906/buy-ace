@@ -20,19 +20,22 @@
 		<%
 		if(session.getAttribute("customer")!=null){
 			Customer customer = (Customer)session.getAttribute("customer"); 
-				out.print("<div class='col-12 my-2 '>"+
-				        		"<div class='card bg-light'>"+
-	  								"<div class='card-body'>"+
-	  									"<h1 class='display-4 text-dark py-3'><b>Welcome <b class='text-warning'>"+customer.getName()+"</b>.!!</b></h1>"+
-	   			 						"<h1 class='h2 text-dark py-2'>USER ID :<b>"+customer.getUserid()+"</b></h1>"+
-	   			 						"<h1 class='h2 text-dark py-2'>USER MAIL :"+customer.getEmail()+"</h1>"+
-	   			 						"<h1 class='h4 text-dark py-0'>MOBILE :"+customer.getMobile()+" </h1>"+
-	   			 						"<h1 class='h4 text-dark py-0'>GENDER :"+customer.getGender()+"</h1>"+
-	   			 						"<h1 class='h4 text-dark py-0'>ROLE :"+customer.getRole()+"</h1><br>"+
-	   			 						" <a href='editprofile.jsp' class='btn btn-primary'>Edit Profile</a> "+
-	   			 						" <a href='orderhistory.jsp' class='btn btn-primary'>History</a> "+
-	   		   			 				" <a href='Logout' class='btn btn-danger'>LOGOUT</a> "+
-										"</div></div></div>");
+            out.print(
+            "<div class='col-12 my-2 '>"+
+            "<div class='card bg-light'>"+
+                "<div class='card-body'>"+
+                    "<h1 class='display-4 text-dark py-3'><b>Welcome <b class='text-warning'>"+customer.getName()+"</b>.!!</b></h1>"+
+                    "<h1 class='h2 text-dark py-2'>USER ID :<b>"+customer.getUserid()+"</b></h1>"+
+                    "<h1 class='h2 text-dark py-2'>USER MAIL :"+customer.getEmail()+"</h1>"+
+                    "<h1 class='h4 text-dark py-0'>MOBILE :"+customer.getMobile()+" </h1>"+
+                    "<h1 class='h4 text-dark py-0'>GENDER :"+customer.getGender()+"</h1>"+
+                    "<h1 class='h4 text-dark py-0'>ROLE :"+customer.getRole()+"</h1><br>"+
+                    " <a href='editprofile.jsp' class='btn btn-primary'>Edit Profile</a> "+
+                    " <a href='orderhistory.jsp' class='btn btn-primary'>History</a> "+
+                    " <a href='/logout' class='btn btn-danger'>LOGOUT</a> "+
+                    "</div>"+
+                "</div>" +
+            "</div>");
 		}
 		else{
 			response.sendRedirect("userLogin.jsp");

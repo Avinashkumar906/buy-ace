@@ -6,9 +6,7 @@
     <title>Index</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="/dist/css/style.css">
-    <link rel="stylesheet" type="text/css" href="./dist/css/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="./dist/css/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="../dist/css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   </head>
@@ -18,36 +16,47 @@
             <div class="d-flex flex-column w-100">
                 <%@ include file="/header.jsp" %>
                 <div class="flex-fill">
-                    <form class="form-horizontal w-100 m-0 p-4" name="dealsform" method="POST" action="/form/Dealsitem">
-					  <div class="form-group">
-					    <label for="itemName">Item</label>
-					    <input type="text" class="form-control" name="itemName">
-					  </div>
-					  <div class="form-group">
-					    <label for="lable">Lable</label>
-					    <input type="text" class="form-control" name="lable">
-					  </div>
-					  <div class="form-group">
-					    <label for="title">Title</label>
-					    <input type="text" class="form-control" name="title">
-					  </div>
-					  <div class="form-group">
-					    <label for="description">Description</label>
-					    <input type="text" class="form-control" name="description">
-					  </div>
-					  <div class="form-group">
-					    <label for="buttonText">ButtonText</label>
-					    <input type="text" class="form-control" name="buttonText">
-					  </div>
-					  <div class="form-group">
-					    <label for="buttonUrl">ButtonUrl</label>
-					    <input type="text" class="form-control" name="buttonUrl">
-					  </div>
-					  <div class="form-group">
-					    <label for="textColour">TextColour</label>
-					    <input type="text" class="form-control" name="textColour">
-					  </div>
-					  <button type="submit" class="btn btn-primary">Submit</button>
+					<form class="form-horizontal container mx-auto p-4" name="dealsform" method="POST" action="/form/Dealsitem">
+					<span class="d-block h3 text-center mb-4">Add Deal</span>
+						<div class="row">
+							<div class="form-group col-md-6">
+							  <label for="itemName">Image Url</label>
+							  <input type="text" class="form-control" name="image">
+							</div>
+							<div class="form-group col-md-6">
+							  <label for="lable">Lable</label>
+							  <input type="text" class="form-control" name="lable">
+							</div>
+							<div class="form-group col-md-6">
+							  <label for="title">Title</label>
+							  <input type="text" class="form-control" name="title">
+							</div>
+							<div class="form-group col-md-6">
+							  <label for="description">Description</label>
+							  <input type="text" class="form-control" name="description">
+							</div>
+							<div class="form-group col-md-6">
+							  <label for="buttonText">ButtonText</label>
+							  <input type="text" class="form-control" name="buttonText">
+							</div>
+							<div class="form-group col-md-6">
+							  <label for="buttonUrl">ButtonUrl</label>
+							  <input type="text" class="form-control" name="buttonUrl">
+							</div>
+							<div class="form-group col-md-6">
+							  <label for="textColour">TextColour</label>
+							  <input type="text" class="form-control" name="textColour">
+							</div>
+							<div class="form-group col-md-6">
+								<label for="textColour">Category</label>
+								<select name="category" class="form-control">
+								    <option value="carousel">Carouser Slide</option>
+								    <option value="teaser">Promo teaser</option>
+								    <option value="banner">Offer Banner</option>
+								</select>
+							</div>
+						</div>
+					  <button type="submit" class="btn btn-primary d-block w-auto mx-auto">Submit</button>
 					</form>
                 </div>
                 <%@ include file="/footer.jsp" %>

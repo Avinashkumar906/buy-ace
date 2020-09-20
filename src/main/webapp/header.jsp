@@ -18,18 +18,18 @@
        }  
     %>
     
-	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-  	    <a class="navbar-brand" href="index.jsp"><h3 class="h3">BuyAce</h3></a>
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark" style="min-height:10vh;">
+  	    <a class="navbar-brand" href="/index.jsp"><h3 class="h3">BuyAce</h3></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto w-100">
                 <li class="nav-item">
-                    <a class="nav-link" href="home.jsp">Phone</a>
+                    <a class="nav-link" href="/home.jsp">Phone</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="adminHome.jsp">Plan</a>
+                    <a class="nav-link" href="/adminHome.jsp">Plan</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Deal</a>

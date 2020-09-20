@@ -21,12 +21,12 @@ public class DealsDao {
 		session.getTransaction().commit();
 		return rs;
 	}
-	public static List<Deals> fetchDeals(String item) {
+	public static List<Deals> fetchDeals(String category) {
 		SessionFactory factory = HibernateUtil.getSessionFactory();
 		Session session = factory.getCurrentSession();
 		
 		session.beginTransaction();
-		List<Deals> rs = session.createQuery("from Deals where item='"+item+"'").list();
+		List<Deals> rs = session.createQuery("from Deals where category='"+category+"'").list();
 		
 		if(rs.size() != 0)
 		{
@@ -54,5 +54,15 @@ public class DealsDao {
 		session.beginTransaction();
 		session.delete(deals);
 		session.getTransaction().commit();
+	}
+
+	public static int addDeal(Deals deals){
+		SessionFactory factory = HibernateUtil.getSessionFactory();
+		Session session = factory.getCurrentSession();
+		session.beginTransaction();
+		int id = (Integer)session.save(deals);
+		System.out.println(id);
+		session.getTransaction().commit();
+		return id;
 	}
 }

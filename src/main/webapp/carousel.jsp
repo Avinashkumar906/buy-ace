@@ -1,31 +1,28 @@
+<%@page import="java.util.ListIterator"%>
+<%@page import="java.util.List"%>
+<%@page import="com.buyace.core.dao.DealsDao"%>
+<%@page import="com.buyace.core.beans.Deals"%>
 <div class="w-100 mb-40">
     <div class="carousel">
-      <div class="card bg-dark text-white" style="height:100vh;">
-        <img src="./dist/images/carousel/carousel3.png" class="h-100 ml-auto" alt="...">
-        <div class="card-img-overlay">
-          <h3 class="card-title">Samsung Galaxy S-790</h3>
-          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, animi optio, possimus unde ullam dolor commodi enim porro libero iure eos similique esse praesentium, quasi itaque reiciendis modi voluptate facere.</p>
-          <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores</p>
-          <a href="#" class="btn btn-primary">Buy now</a>
-        </div>
-      </div>
-      <div class="card bg-dark text-white" style="height:100vh;">
-        <img src="./dist/images/carousel/carousel3.png" class="h-100 ml-auto" alt="...">
-        <div class="card-img-overlay">
-          <h2 class="card-title">Samsung Galaxy S-790</h2>
-          <h6 class="h6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, animi optio, possimus unde ullam dolor commodi enim porro libero iure eos similique esse praesentium, quasi itaque reiciendis modi voluptate facere.</h6>
-          <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores</p>
-          <a href="#" class="btn btn-primary">Buy now</a>
-        </div>
-      </div>
-      <div class="card bg-dark text-white" style="height:100vh;">
-        <img src="./dist/images/carousel/carousel3.png" class="h-100 ml-auto" alt="...">
-        <div class="card-img-overlay">
-          <h5 class="card-title">Samsung p4</h5>
-          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, animi optio, possimus unde ullam dolor commodi enim porro libero iure eos similique esse praesentium, quasi itaque reiciendis modi voluptate facere.</p>
-          <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores</p>
-          <a href="#" class="btn btn-primary">Buy now</a>
-        </div>
-      </div>      
+        <%
+    	    List<Deals> list = DealsDao.fetchDeals("carousel");
+    		if(list.size()!=0){
+    	    ListIterator<Deals> Iterator = list.listIterator();
+    		    while(Iterator.hasNext()){
+    		    	Deals deals = Iterator.next();
+    		    	out.print("<div class=\"card bg-dark text-white\" style=\"height:90vh;\">");
+    				out.print("<img src="+deals.getImage()+" class=\"h-100 ml-auto mr-5 p-4\">");
+    		    	out.print("<div class=\"card-img-overlay\">");
+    		    	out.print("<p class=\"card-text mb-0\">"+deals.getTitle()+"</p>");
+    		    	out.print("<span class=\"card-title h2 d-block\">"+deals.getLable()+"</span>");
+    		    	out.print("<p class=\"card-text my-2\">"+deals.getDescription()+"</p>");
+    		    	out.print("<a href="+deals.getButtonUrl()+" class=\"btn btn-light\">"+deals.getButtonText()+"</a>");
+    	    		out.print("</div></div>");
+    	    	}
+    		}
+    		else{
+    			out.print("<h2 class='w-100 text-center h2 mt-5'><b class='text-dark'> Deals not available.!</b></h2>");
+    		}
+        %>
     </div>
 </div>

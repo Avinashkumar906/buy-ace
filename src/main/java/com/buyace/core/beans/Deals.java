@@ -15,29 +15,37 @@ public class Deals {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "itemId")	
 	private int itemId;
-	@Column(name="item",length=20)
-	private String item;
-	@Column(name="lable",length=30)
+	@Column(name="image")
+	private String image;
+	@Column(name="category")
+	private String category;
+	@Column(name="lable")
 	private String lable;
-	@Column(name="title",length=30)
+	@Column(name="title")
 	private String title;
-	@Column(name="description",length=30)
+	@Column(name="description")
 	private String description;
-	@Column(name="buttonText", length=10)
+	@Column(name="buttonText")
 	private String buttonText;
-	@Column(name="buttonUrl", length=30)
+	@Column(name="buttonUrl")
 	private String buttonUrl;
-	@Column(name="textColour", length=10)
+	@Column(name="textColour")
 	private String textColour;
 	
 	public int getItemId() {
 		return itemId;
 	}
-	public String getItem() {
-		return item;
+	public String getImage() {
+		return image;
 	}
-	public void setItem(String item) {
-		this.item = item;
+	public void setImage(String image) {
+		this.image = image;
+	}
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
 	}
 	public String getLable() {
 		return lable;
@@ -75,10 +83,11 @@ public class Deals {
 	public void setTextColour(String textColour) {
 		this.textColour = textColour;
 	}
-	public Deals(String item, String lable, String title, String description, String buttonText,
+	public Deals(String image, String category, String lable, String title, String description, String buttonText,
 			String buttonUrl, String textColour) {
 		super();
-		this.item = item;
+		this.image = image;
+		this.category = category;
 		this.lable = lable;
 		this.title = title;
 		this.description = description;

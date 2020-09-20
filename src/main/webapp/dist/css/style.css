@@ -15,9 +15,11 @@ html,head,body{
 	border-radius: 0px;
 }
 .carousel .card .card-img-overlay {
-    position: absolute;
+	position: absolute;
+	height: fit-content;
     top: 40%;
 	left: 0;
+	background-color: black;
 	width: 100%;
 	max-width: 600px;
     transform: translateY(-50%);
@@ -89,8 +91,13 @@ html,head,body{
 }
 
 /* testimonial end */
-@media only screen and (max-width: 768px) {
+@media (max-width: 767px) {
     .alignment-custom{
         margin:0 auto!important;
-    }
+	}
+	.carousel .card .card-img-overlay {
+		top: 60%!important;
+		text-align: center!important;
+		background-color: black;
+	}
 }
