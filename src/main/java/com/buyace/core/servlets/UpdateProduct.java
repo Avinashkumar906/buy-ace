@@ -16,7 +16,6 @@ public class UpdateProduct extends HttpServlet {
 		Product product = com.buyace.core.dao.ProductDao.getProduct(productId);
 		request.setAttribute("product", product);
 		request.getRequestDispatcher("updateProduct.jsp").forward(request, response);
-		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

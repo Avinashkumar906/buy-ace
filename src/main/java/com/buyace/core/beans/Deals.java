@@ -35,6 +35,9 @@ public class Deals {
 	public int getItemId() {
 		return itemId;
 	}
+	public void setItemId(int itemId) {
+		this.itemId = itemId;
+	}
 	public String getImage() {
 		return image;
 	}

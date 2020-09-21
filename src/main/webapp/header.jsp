@@ -3,9 +3,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" errorPage="error.jsp"%>
     <%
-    	String welcome = "<a class=\"btn btn-warning ml-1\" href=\"userLogin.jsp\"><b class=\"text-light\">Login/Signup</b></a>";
+    	String welcome = "<a class='btn btn-light ml-1' href='userLogin.jsp'><b>Login</b></a>";
     	if(session.getAttribute("role")!=null){
-    		welcome = "<a class=\"btn btn-warning ml-1\" href=\"viewprofile.jsp\"><b class='text-light'>HI! "+session.getAttribute("name").toString()+"</b></a>";
+    		welcome = "<a class='btn btn-light ml-1' href='/viewprofile.jsp'><b>HI! "+session.getAttribute("name").toString()+"</b></a>";
     	}
     %>
     <!-- Login defination ends here  -->
@@ -26,19 +26,19 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto w-100">
                 <li class="nav-item">
-                    <a class="nav-link" href="/home.jsp">Phone</a>
+                    <a class="nav-link" href="/phone.jsp">Phone</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/adminHome.jsp">Plan</a>
+                    <a class="nav-link" href="/plan.jsp">Plan</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Deal</a>
+                    <a class="nav-link" href="/deal">Deal</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Accessory</a>
+                    <a class="nav-link" href="/accessory">Accessory</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact Us</a>
+                    <a class="nav-link" href="/contact">Contact Us</a>
                 </li>
                 <li class="nav-item dropdown d-none">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -57,12 +57,19 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="about.jsp">About us</a>
+                    <a class="nav-link" href="/about.jsp">About us</a>
                 </li>
                 <li class="nav-item alignment-custom">
-                    <a class="btn btn-warning" href="checkout.jsp">
-                        <i class="fas fa-shopping-cart"><span class="badge badge-light ml-1"> <%=itemInCart%></span></i>
+                    <a class="btn btn-light" href="checkout.jsp">
+                        <i class="fas fa-shopping-cart">
+                        <%= itemInCart > 0 ? "<span class='badge badge-light ml-1'>"+itemInCart+"</span>" : "" %>
+                        </i>
                     </a>
+                    <%
+                    if(null != session.getAttribute("role")  && session.getAttribute("role").equals("admin")){
+                      out.print("<a class='btn btn-light ml-1' href='/adminHome.jsp'><b>Admin</b></a>");
+                      }
+                    %>
                     <% out.print(welcome); %>
                 </li>
             </ul>

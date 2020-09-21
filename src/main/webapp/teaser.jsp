@@ -5,14 +5,14 @@
 <style>
 .btn-teaser{
     position: absolute;
-    bottom: 10%;
-    right: 10%;
-    left: 10%;
+    bottom: 5%;
+    right: 5%;
+    left: 5%;
 }
 </style>
-<div class="container my-5">
-    <h2 class="h2 text-dark mb-5 display4 text-center"> Offers at a glance!</h2>
-    <div class="row my-5">
+<div class="container mt-5">
+    <h2 class="h2 text-dark mb-0 display4 text-center"> Offers at a glance!</h2>
+    <div class="row">
         <%
             List<Deals> list1 = DealsDao.fetchDeals("teaser");
             if(list1.size()!=0){
@@ -21,12 +21,12 @@
                 while(Iterator.hasNext() && index < 3){
                     Deals deals = Iterator.next();
                     out.print("<div class='col-sm-4'>");
-                    out.print("<div class='card text-white m-2' style='border-radius:10px;background:black;'>");
+                    out.print("<div class='card text-white mx-2 my-5' style='border-radius:10px;background:black;'>");
                     out.print("<img src="+deals.getImage()+" class='card-img' style='position:relative;right:-20px'> ");
                     out.print("<div class='card-img-overlay'>");
+                    out.print("<small style='font-size:10px;'><i>"+deals.getLable()+"</i></small>");
                     out.print("<h2 class='card-title h2 w-50'>"+deals.getTitle()+"</h2>");
-                    out.print("<p class='card-text w-50' style='max-height:220px;overflow:hidden;'>"+deals.getDescription()+"</p>");
-                    out.print("<small style='font-size:10px;'><i> @ "+deals.getLable()+"</i></small>");
+                    out.print("<p class='card-text w-50'>"+deals.getDescription()+"</p>");
                     out.print("<a href="+deals.getButtonUrl()+" class='btn btn-light btn-teaser'>"+deals.getButtonText()+"</a>");
                     out.print("</div></div></div>");
                     index++;

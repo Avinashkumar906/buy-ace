@@ -33,12 +33,6 @@ public class Updateitem extends HttpServlet {
 		session.update(product);
 		session.getTransaction().commit();
 		session.close();
-		/*if(id>0){
-			for(Part part : request.getParts()) {
-			System.out.println(part.getContentType());
-		    part.write("D:/Sneha JAVA Pgms/E-commerce/WebContent/images/"+id+".jpg");
-			}
-		}*/
 		response.sendRedirect("updateitem.jsp");
 	}
 

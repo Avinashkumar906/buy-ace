@@ -18,7 +18,8 @@
                 <div class="d-flex flex-column w-100">
                     <%@ include file="/header.jsp" %>
                     <div class="flex-fill">
-                        <div class="h1 text-center col-12 p-2 ">Deals Section</div>
+                        <div class="h1 text-center col-12 pt-2 ">Deals Section</div>
+                        <div class="h1 text-center col-12 pb-2 "><a href='/form/deal.jsp' class='btn btn-outline-dark'>Add Deal</a></div>
                         <table class="table">
                           <thead class="thead-light">
                             <tr>
@@ -26,6 +27,7 @@
                               <th scope="col">Label</th>
                               <th scope="col">Description</th>
                               <th scope="col">Category</th>
+                              <th scope="col">Update</th>
                               <th scope="col">Remove</th>
                             </tr>
                           </thead>
@@ -36,13 +38,12 @@
                               		Iterator itr = list.iterator();
                               		while(itr.hasNext()){
                               			Deals deals = (Deals)itr.next();
-                          		    	out.print("<tr><th>"+deals.getItemId()+"</th><th>"+deals.getLable()+"</th><th>"+deals.getDescription()+"</th><th>"+deals.getCategory()+"</th><th><a href='/removedeals?id="+deals.getItemId()+" 'class='btn btn-danger'>Remove</a></th></tr>");
+                          		    	out.print("<tr><th>"+deals.getItemId()+"</th><th>"+deals.getLable()+"</th><th>"+deals.getDescription()+"</th><th>"+deals.getCategory()+"</th><th><a href='/updatedeals?id="+deals.getItemId()+" 'class='btn btn-primary'>Update</a></th><th><a href='/removedeals?id="+deals.getItemId()+" 'class='btn btn-primary'>Remove</a></th></tr>");
                               		}
                           		}
                           		else{
                           			out.print("<tr><td colspan='5' class='text-center h2'>No Deals available!</td></tr>");
                           		}
-
                             %>
                           </tbody>
                         </table>

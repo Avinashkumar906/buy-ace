@@ -30,11 +30,12 @@
               <a href="/index.jsp" class="text-light h4 bold mr-2"><i class="fas fa-home"> Home</i> </a>
             </div>
             <div class="col-12 text-right">
-              <span class="text-light h5">Phone | </span>
-              <span class="text-light h5">Plan | </span>
-              <span class="text-light h5">Deal | </span>
-              <span class="text-light h5">Accessory | </span>
-              <span class="text-light mr-2 h5">Contact</span>
+              <span class="text-light h6">Phone | </span>
+              <span class="text-light h6">Plan | </span>
+              <span class="text-light h6">Deal | </span>
+              <span class="text-light h6">Accessory | </span>
+              <span class="text-light h6">About | </span>
+              <span class="text-light mr-2 h6">Contact</span>
             </div>
           </div>
         </div>

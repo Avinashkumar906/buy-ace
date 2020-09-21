@@ -11,13 +11,60 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   </head>
 <body class="bg-light">
+    <%
+		Deals deals = (Deals)request.getAttribute("deals");
+	%>
     <div class="container-fluid">
         <div class="row main-section">
             <div class="d-flex flex-column w-100">
                 <%@ include file="/header.jsp" %>
                 <div class="flex-fill">
-					<form class="form-horizontal container mx-auto p-4" name="dealsform" method="POST" action="/form/Dealsitem">
-					<span class="d-block h3 text-center mb-4">Add Deal</span>
+                <% if(null != deals){ %>
+                  <form class="form-horizontal container mx-auto p-4" name="dealsform" method="POST" action="/updatedeals?id=<%=deals.getItemId()%>">
+                    <span class="d-block h3 text-center mb-4">Update Deals</span>
+						<div class="row">
+							<div class="form-group col-md-6">
+							  <label for="itemName">Image Url</label>
+							  <input type="text" class="form-control" name="image" value="<%=deals.getImage()%>">
+							</div>
+							<div class="form-group col-md-6">
+							  <label for="lable">Lable</label>
+							  <input type="text" class="form-control" name="lable" value="<%=deals.getLable()%>">
+							</div>
+							<div class="form-group col-md-6">
+							  <label for="title">Title</label>
+							  <input type="text" class="form-control" name="title" value="<%=deals.getTitle()%>">
+							</div>
+							<div class="form-group col-md-6">
+							  <label for="description">Description</label>
+							  <input type="text" class="form-control" name="description" value="<%=deals.getDescription()%>">
+							</div>
+							<div class="form-group col-md-6">
+							  <label for="buttonText">ButtonText</label>
+							  <input type="text" class="form-control" name="buttonText" value="<%=deals.getButtonText()%>">
+							</div>
+							<div class="form-group col-md-6">
+							  <label for="buttonUrl">ButtonUrl</label>
+							  <input type="text" class="form-control" name="buttonUrl" value="<%=deals.getButtonUrl()%>">
+							</div>
+							<div class="form-group col-md-6">
+							  <label for="textColour">TextColour</label>
+							  <input type="text" class="form-control" name="textColour" value="<%=deals.getTextColour()%>">
+							</div>
+							<div class="form-group col-md-6">
+								<label for="textColour">Category</label>
+								<select name="category" class="form-control" value="<%=deals.getCategory()%>">
+								    <option value="carousel" >Carouser Slide</option>
+								    <option value="teaser">Promo teaser</option>
+								    <option value="banner">Offer Banner</option>
+								</select>
+							</div>
+						</div>
+					  <button type="submit" class="btn btn-primary d-block w-auto mx-auto">Submit</button>
+					</form>
+                <% } else { %>
+                  <form class="form-horizontal container mx-auto p-4" name="dealsform" method="POST" action="/form/Dealsitem">
+                    <span class="d-block h3 text-center mb-4">Add Deal</span>
 						<div class="row">
 							<div class="form-group col-md-6">
 							  <label for="itemName">Image Url</label>
@@ -58,6 +105,7 @@
 						</div>
 					  <button type="submit" class="btn btn-primary d-block w-auto mx-auto">Submit</button>
 					</form>
+                <% } %>
                 </div>
                 <%@ include file="/footer.jsp" %>
             </div>
