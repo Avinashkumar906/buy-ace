@@ -15,17 +15,17 @@ public class Deals {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "itemId")	
 	private int itemId;
-	@Column(name="image")
+	@Column(name="image", nullable = false)
 	private String image;
-	@Column(name="category")
+	@Column(name="category", nullable = false, length=20)
 	private String category;
-	@Column(name="lable")
+	@Column(name="lable", nullable = true, length=255)
 	private String lable;
-	@Column(name="title")
+	@Column(name="title", nullable = false, length=255)
 	private String title;
-	@Column(name="description")
+	@Column(name="description", length = 1024)
 	private String description;
-	@Column(name="buttonText")
+	@Column(name="buttonText", length = 20)
 	private String buttonText;
 	@Column(name="buttonUrl")
 	private String buttonUrl;

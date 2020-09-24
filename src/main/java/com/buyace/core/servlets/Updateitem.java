@@ -26,14 +26,14 @@ public class Updateitem extends HttpServlet {
 		String description = request.getParameter("description");
 		String category = request.getParameter("category");
 		
-		Product product = new Product(productName, companyName, price, description, category);
-		product.setProductId(id);
-		Session session = com.buyace.core.hibernate.util.HibernateUtil.getSessionFactory().openSession();
-		session.beginTransaction();
-		session.update(product);
-		session.getTransaction().commit();
-		session.close();
-		response.sendRedirect("updateitem.jsp");
+//		Product product = new Product(productName, companyName, price, description, category);
+//		product.setProductId(id);
+//		Session session = com.buyace.core.hibernate.util.HibernateUtil.getSessionFactory().openSession();
+//		session.beginTransaction();
+//		session.update(product);
+//		session.getTransaction().commit();
+//		session.close();
+//		response.sendRedirect("updateitem.jsp");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -13,34 +13,32 @@ import org.hibernate.Session;
 
 import com.buyace.core.beans.Product;
 
-@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, // 2MB
-maxFileSize = 1024 * 1024 * 10, // 10MB
-maxRequestSize = 1024 * 1024 * 50) // 50MB
-@WebServlet("/Uploaditem")
+@WebServlet("/form/Uploaditem")
 public class Uploaditem extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		String productName = request.getParameter("productName");
+		String productLable = request.getParameter("productLabel");
+		String mktText = request.getParameter("mktText");
 		String companyName = request.getParameter("companyName");
 		double price = Double.parseDouble(request.getParameter("price"));
 		String description = request.getParameter("description");
+		String image = request.getParameter("image");
 		String category = request.getParameter("category");
 		
-		Product product = new Product(productName, companyName, price, description, category);
+		Product product = new Product(productName, productLable, mktText, companyName, price, description, image, category);
 		Session session = com.buyace.core.hibernate.util.HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
+
 		int id = (Integer)session.save(product);
 		session.getTransaction().commit();
+
 		if(id>0){
-			for(Part part : request.getParts()) {
-			System.out.println(part.getContentType());
-		    part.write("C:/POCs/buyaceproject/"+id+".jpg");
-		    //part.
-			}
+			response.sendRedirect("/form/addproduct.jsp");
 		}
-		response.sendRedirect("addProduct.jsp");
+
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

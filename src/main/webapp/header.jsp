@@ -26,7 +26,7 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto w-100">
                 <li class="nav-item">
-                    <a class="nav-link" href="/phone.jsp">Phone</a>
+                    <a class="nav-link" href="/product.jsp?category=mobile">Phone</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/plan.jsp">Plan</a>

@@ -11,6 +11,12 @@ html,head,body{
     margin-left: auto!important;
 }
 /* carousel fix */
+.slick-initialized .slick-slide {
+    display: block;
+    outline: none;
+    border-radius: 0;
+    border: 0;
+}
 .carousel .card{
 	border-radius: 0px;
 }

@@ -46,7 +46,18 @@ public class ProductDao {
 		}
 		return new Product();
 	}
-	
+
+	public static Product getProductById(int productId){
+		try {
+			SessionFactory factory = HibernateUtil.getSessionFactory();
+			Session session = factory.getCurrentSession();
+			Product product = (Product)session.get(Product.class,productId);
+			return product;
+		} catch (Exception e){
+			return new Product();
+		}
+	}
+
 	public static void removeProduct(int productId){
 		SessionFactory factory = HibernateUtil.getSessionFactory();
 		Session session = factory.getCurrentSession();

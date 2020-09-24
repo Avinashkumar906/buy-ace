@@ -17,6 +17,11 @@
         <div class="row main-section">
             <div class="d-flex flex-column w-100">
             <%@ include file="header.jsp" %>
+            <%
+            if(session.getAttribute("role") == null || !session.getAttribute("role").equals("admin")){
+              response.sendRedirect("/index.jsp");
+            }
+            %>
             <div class="flex-fill">
             <div class="h1 text-center col-12 p-2 ">Admin Section</div>
             <div class="row px-4">
@@ -28,16 +33,16 @@
                         <a href="/admin/offeranddeal.jsp" class="btn btn-dark">Offers & Deals</a>
                     </div>
                 </div>
-               </div>
-               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 my-2">
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 my-2">
                 <div class="card bg-light" >
-                <img class="card-img-top" src="/dist/images/admin2.png" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Add Products</h5>
-                        <a href="addProduct.jsp" class="btn btn-primary">Product<sup>+</sup></a>
+                <img class="card-img-top" src="/dist/images/admin1.png" alt="Card image cap">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Products Panel</h5>
+                        <a href="/admin/productlist.jsp" class="btn btn-dark">Product</a>
                     </div>
                 </div>
-               </div>
+            </div>
                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 my-2">
                 <div class="card bg-light" >
                 <img class="card-img-top" src="/dist/images/admin1.png" alt="Card image cap">
