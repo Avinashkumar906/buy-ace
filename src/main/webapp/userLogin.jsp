@@ -6,70 +6,56 @@
     <title>Index</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="./dist/css/style.css">
+    <link rel="stylesheet" type="text/css" href="./dist/css/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="./dist/css/slick/slick-theme.css"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
- 	<style>body{background-image: linear-gradient(rgba(22,22,22,.4), rgba(22,22,22,.4)), url('./images/home.jpg');background-size:cover;background-attachment:fixed;}</style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   </head>
-<body>
-<%@ include file="header.jsp" %>
+<body class="bg-light">
+    <div class="container-fluid">
+        <div class="row main-section">
+            <div class="d-flex flex-column w-100">
+            <%@ include file="header.jsp" %>
 
-<!-- //form start here -->
-<div class="container">
-    <form class="form-horizontal" method="post" action="ulogin.jsp">
-        <div class="display-4 text-center my-5 py-4 text-light font-weight-bold">SignIn</div>
-        <div class="row">
-            <div class="col-md-3">
-                <label for="email" class="text-light h3">E-Mail Address</label>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <input type="text" name="email" class="form-control" id="email" placeholder="you@example.com" required>
+            <!-- //form start here -->
+            <div class="flex-fill">
+                <form class="p-4 mx-auto" method="post" action="/signin" style="max-width:650px;">
+                    <div class="h2 text-dark text-center my-4">SignIn</div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="email">E-Mail Address</label>
+                                <input type="text" name="email" class="form-control" id="email" placeholder="you@example.com" required>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="email">Password</label>
+                                <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
+                            </div>
+                        </div>
+                        <div class="col-12 text-center">
+                            <div class="h4 text-center my-2">
+                            <%
+                                String loginStatus = (String)request.getAttribute("loginStatus");
+                                if(null != loginStatus)
+                                out.print(loginStatus);
+                            %>
+                            </div>
+                            <button type="submit" class="btn btn-dark ml-2"><i class="fas fa-user-tag"> Signin</i></button>
+                            <a href="userSignup.jsp" class="btn btn-primary mr-2"><i class="fas fa-user-plus"> Signup</i></a>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
-            <div class="col-md-3">
-                <div id="validate-email">
-                        <span class="text-danger align-middle">
-                            <!-- Put e-mail validation error messages here -->
-                        </span>
-                </div>
+
+               <%@ include file="footer.jsp" %>
             </div>
         </div>
-	<div class="row">
-            <div class="col-md-3">
-                <label for="email" class="text-light h3">Password</label>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <input type="password" name="password" class="form-control" id="password"
-                               placeholder="Password" required>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div id="validate-password">
-                        <span class="text-danger align-middle">
-                           <!--  <i class="fa fa-close"></i>Error message -->
-                        </span>
-                </div>
-            </div>
     </div>
-        <div class="row">
-            <div class="col-5 d-block m-auto">
-                <button type="submit" class="btn btn-success my-2"><i class="fas fa-user-tag"> Login</i></button>
-				<a href="userSignup.jsp" class="btn btn-primary my-2"><i class="fas fa-user-plus">  Register</i></a>
-            </div>
-        </div>
-    </form>
-</div>	
-
-<!-- //form ends here -->
-
-<%@ include file="footer.jsp" %>
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </body>
 </html>

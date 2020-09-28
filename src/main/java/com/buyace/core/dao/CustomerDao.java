@@ -30,22 +30,19 @@ public class CustomerDao {
 	
 	public static Customer validateUser(Customer user) {
 		SessionFactory factory = HibernateUtil.getSessionFactory();
-		System.out.println(user);
 		Session session = factory.openSession();
 		
 		String email = user.getEmail();
-		String userpass = user.getPassword();
+		String password = user.getPassword();
 		
 		session.beginTransaction();
-		List<Customer> rs = session.createQuery("from Customer where usermail='"+email+"'and userpass='"+userpass+"'").list();
-		System.out.println(rs);
+		List<Customer> rs = session.createQuery("from Customer where usermail='"+email+"'and userpass='"+password+"'").list();
 		session.getTransaction().commit();
 		session.close();
 		if(rs.size() != 0)
 		{
 			return rs.get(0);
 		}
-		
 		return null;
 	}
 	

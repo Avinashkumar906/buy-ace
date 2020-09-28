@@ -11,12 +11,80 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   </head>
 <body class="bg-light">
+    <%
+		Product product = (Product)request.getAttribute("product");
+	%>
     <div class="container-fluid">
         <div class="row main-section">
             <div class="d-flex flex-column w-100">
                 <%@ include file="/header.jsp" %>
-                <form class="form-horizontal container mx-auto p-4" name="myform" method="POST" action="/form/Uploaditem">
-                <span class="d-block h3 text-center mb-4">Add Product</span>
+                <% if(null != product){ %>
+                <form class="form-horizontal container mx-auto p-4" name="myform" method="POST" action="/updateproduct?id=<%=product.getProductId() %>">
+                <span class="d-block h3 text-center mb-4">Update Product</span>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="name" >Name</label>
+                                <input type="text" name="productName" class="form-control" value="<%=product.getProductName() %>" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="name" >Label</label>
+                                <input type="text" name="productLabel" class="form-control" value="<%=product.getProductLabel() %>">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="name" >Marketing Text</label>
+                                <input type="text" name="mktText" class="form-control" value="<%=product.getMktText() %>">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="companyName">Sub Category</label>
+                                <input type="text" name="companyName" class="form-control" value="<%=product.getCompanyName() %>" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="category">Category</label>
+                                <select name="category" class="form-control" required>
+                                    <option class="py-2" selected></option>
+                                    <option value="sport" class="py-2">Sport</option>
+                                    <option value="phone" class="py-2">Phone</option>
+                                    <option value="book" class="py-2">Book</option>
+                                    <option value="computer" class="py-2">Computer</option>
+                                    <option value="cloth" class="py-2">Cloth</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="price">Price</label>
+                                <input type="text" name="price" class="form-control" value="<%=product.getPrice() %>" required>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="image">Image Url</label>
+                                <input type="text" name="image" class="form-control" value="<%=product.getImage() %>" required>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="description">Description</label>
+                                <textarea name="description"  class="form-control"><%=product.getDescription() %></textarea>
+                            </div>
+                        </div>
+                        <div class="col-12 text-center">
+                            <button type="submit" class="btn btn-dark my-2"><i class="fas fa-user-tag"> Update</i></button>
+                        </div>
+                    </div>
+                  </form>
+                  <% } else { %>
+                  <form class="form-horizontal container mx-auto p-4" name="myform" method="POST" action="/form/Uploaditem">
+                    <span class="d-block h3 text-center mb-4">Add Product</span>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -78,6 +146,7 @@
                         </div>
                     </div>
                   </form>
+                  <% }%>
 	            <%@ include file="/footer.jsp" %>
             </div>
         </div>

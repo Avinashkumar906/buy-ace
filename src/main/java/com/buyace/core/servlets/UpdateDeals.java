@@ -34,9 +34,9 @@ public class UpdateDeals extends HttpServlet {
 
         Deals deals = new Deals(image, category, lable, title, description, buttonText, buttonUrl, textColour);
 
-        deals.setItemId(dealId);
         Session session = com.buyace.core.hibernate.util.HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
+        deals.setItemId(dealId);
         session.update(deals);
         session.getTransaction().commit();
         session.close();

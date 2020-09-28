@@ -3,7 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" errorPage="error.jsp"%>
     <%
-    	String welcome = "<a class='btn btn-light ml-1' href='userLogin.jsp'><b>Login</b></a>";
+    	String welcome = "<a class='btn btn-light ml-1' href='/userLogin.jsp'><b>Login</b></a>";
     	if(session.getAttribute("role")!=null){
     		welcome = "<a class='btn btn-light ml-1' href='/viewprofile.jsp'><b>HI! "+session.getAttribute("name").toString()+"</b></a>";
     	}
@@ -26,7 +26,7 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto w-100">
                 <li class="nav-item">
-                    <a class="nav-link" href="/product.jsp?category=mobile">Phone</a>
+                    <a class="nav-link" href="/phone.jsp">Phone</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/plan.jsp">Plan</a>

@@ -5,9 +5,13 @@
 <style>
 .btn-teaser{
     position: absolute;
-    bottom: 5%;
-    right: 5%;
-    left: 5%;
+    bottom: 18%;
+    right: 12%;
+    left: 6%;
+}
+.card.text-dark .btn{
+    background:#343a40!important;
+    color:#f8f9fa!important;
 }
 </style>
 <div class="container mt-5">
@@ -21,9 +25,9 @@
                 while(Iterator.hasNext() && index < 3){
                     Deals deals = Iterator.next();
                     out.print("<div class='col-sm-4'>");
-                    out.print("<div class='card text-white mx-2 my-5' style='border-radius:10px;background:black;'>");
-                    out.print("<img src="+deals.getImage()+" class='card-img' style='position:relative;right:-20px'> ");
-                    out.print("<div class='card-img-overlay'>");
+                    out.print("<div class='card text-white mx-2 my-5 "+deals.getTextColour()+"' style='border:none;background:transparent;'>");
+                    out.print("<img src="+deals.getImage()+" class='card-img' style='width:110%'> ");
+                    out.print("<div class='card-img-overlay ml-2'>");
                     out.print("<small style='font-size:10px;'><i>"+deals.getLable()+"</i></small>");
                     out.print("<h2 class='card-title h2 w-50'>"+deals.getTitle()+"</h2>");
                     out.print("<p class='card-text w-50'>"+deals.getDescription()+"</p>");

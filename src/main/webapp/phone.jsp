@@ -19,7 +19,7 @@
             <%@ include file="header.jsp" %>
             <div class="flex-fill">
                 <%
-                List<Product> list = ProductDao.fetchProduct(request.getParameter("category"));
+                List<Product> list = ProductDao.fetchProduct("phone",request.getParameter("category"));
                 if(list.size()!=0){
                 ListIterator<Product> Iterator = list.listIterator();
                     while(Iterator.hasNext()){
@@ -38,9 +38,7 @@
                     }
                 }
                 else{
-                    out.print("<div class='d-block'>" +
-                            "<div class='display-1 my-5 py-5'><b class='text-warning'> Product is not available.!</b></div>"+
-                        "</div>");
+                    out.print("<div class='text-center h4 my-2'> No product Available!</div>");
                 }
 
                 %>

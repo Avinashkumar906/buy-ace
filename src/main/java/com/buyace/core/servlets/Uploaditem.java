@@ -19,6 +19,9 @@ public class Uploaditem extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String productName = request.getParameter("productName");
 		String productLable = request.getParameter("productLabel");
 		String mktText = request.getParameter("mktText");
@@ -27,7 +30,7 @@ public class Uploaditem extends HttpServlet {
 		String description = request.getParameter("description");
 		String image = request.getParameter("image");
 		String category = request.getParameter("category");
-		
+
 		Product product = new Product(productName, productLable, mktText, companyName, price, description, image, category);
 		Session session = com.buyace.core.hibernate.util.HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
@@ -38,12 +41,6 @@ public class Uploaditem extends HttpServlet {
 		if(id>0){
 			response.sendRedirect("/form/addproduct.jsp");
 		}
-
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
 	}
 
 }

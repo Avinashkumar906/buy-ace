@@ -21,16 +21,17 @@ public class ProductDao {
 		session.getTransaction().commit();
 		return rs;
 	}
-	public static List<Product> fetchProduct(String category) {
+
+
+	public static List<Product> fetchProduct(String category, String subCategory) {
 		SessionFactory factory = HibernateUtil.getSessionFactory();
 		Session session = factory.getCurrentSession();
-		
 		session.beginTransaction();
-		List<Product> rs = session.createQuery("from Product where category='"+category+"'").list();
-		
-		if(rs.size() != 0)
-		{
-			return rs;
+		List<Product> rs = new ArrayList<Product>();
+		if(null!=subCategory){
+			rs = session.createQuery("from Product where CATEGORY='"+category+"' and COMPANY = '"+subCategory+"'").list();
+		} else {
+			rs = session.createQuery("from Product where category='"+category+"'").list();
 		}
 		session.getTransaction().commit();
 		return rs;

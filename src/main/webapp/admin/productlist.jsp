@@ -38,7 +38,7 @@
                             if(itr.hasNext()){
                                 while(itr.hasNext()){
                                     Product product = (Product)itr.next();
-                                    out.print("<tr><th>"+product.getProductId()+"</th><th>"+product.getProductName()+"</th><th>"+product.getCompanyName()+"</th><th>"+product.getCategory()+"</th><th><a href='/updatedeals?id="+product.getProductId()+" 'class='btn btn-primary'>Update</a></th><th><a href='/removedeals?id="+product.getProductId()+" 'class='btn btn-primary'>Remove</a></th></tr>");
+                                    out.print("<tr><th>"+product.getProductId()+"</th><th>"+product.getProductName()+"</th><th>"+product.getCompanyName()+"</th><th>"+product.getCategory()+"</th><th><a href='/updateproduct?id="+product.getProductId()+" 'class='btn btn-primary'>Update</a></th><th><a href='/removedeals?id="+product.getProductId()+" 'class='btn btn-primary'>Remove</a></th></tr>");
                                 }
                             } else {
                                 out.print("<tr><td colspan='6' class='text-center h2'>No product available!</td></tr>");

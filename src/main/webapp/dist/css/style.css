@@ -20,6 +20,9 @@ html,head,body{
 .carousel .card{
 	border-radius: 0px;
 }
+.card-title,.card-text{
+    text-transform: capitalize;
+}
 .carousel .card .card-img-overlay {
 	position: absolute;
 	height: fit-content;
