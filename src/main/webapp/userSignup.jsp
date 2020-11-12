@@ -6,172 +6,77 @@
     <title>Index</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="./dist/css/style.css">
+    <link rel="stylesheet" type="text/css" href="./dist/css/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="./dist/css/slick/slick-theme.css"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
- 	<style>body{background-image: linear-gradient(rgba(22,22,22,.4), rgba(22,22,22,.4)), url('./images/home.jpg');background-size:cover;background-attachment:fixed;}</style>
-  	<script>  
-function validateform(){  
-var name=document.myform.name.value;  
-var rname=/^[A-Za-z]+$/;
-var pass=document.myform.password.value;
-var rpass=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,20}$/;
-var mobile=document.myform.mobile.value;
-var rmobile=/^\d{10}$/;  
-var email=document.myform.email.value;
-var remail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-  
-  
-  if((!name.match(rname))){  
-  	document.getElementById("validate-name").innerHTML="Name must contain alphabets and not empty.!";
-  return false;  
-  }
-  else if((!email.match(remail))){  
-	  document.getElementById("validate-name").innerHTML="";
-	  document.getElementById("validate-email").innerHTML="Please enter a valid email.!" ; 
-  return false;  
-  } 
-  else if((!pass.match(rpass))){  
-	  document.getElementById("validate-name").innerHTML="";
-	  document.getElementById("validate-email").innerHTML="";
-	  document.getElementById("validate-password").innerHTML="Contains uppercase, lowercase, number, special character and should be 8-20 long."; 
-  return false;  
-  }  
-  else if((!mobile.match(rmobile))){  
-	  document.getElementById("validate-name").innerHTML="";
-	  document.getElementById("validate-email").innerHTML="";
-	  document.getElementById("validate-password").innerHTML="";
-	  document.getElementById("validate-mobile").innerHTML="Please enter a valid number.!" ; 
-  return false;  
-  } 
-  
-  else{
-  return true;
-  }
-}  
-</script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   </head>
-<body>
-	<%@ include file="header.jsp" %>
+<body class="bg-light">
+    <div class="container-fluid">
+        <div class="row main-section">
+            <div class="d-flex flex-column w-100">
+            <%@ include file="header.jsp" %>
 
-<div class="container">
-    <form class="form-horizontal" name="myform" method="POST" action="usignup.jsp" onsubmit="return validateform()">
-	<div class="display-4 text-center py-3 text-light font-weight-bold">SignUp</div>        
-        <div class="row">
-            <div class="col-md-3">
-                <label for="name" class="text-light h3">Name</label>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <div class="input-group my-2 mx-2 ">
-                        <input type="text" name="name" class="form-control" id="name" placeholder="John Doe" >
+            <div class="flex-fill">
+                <form class="p-4 mx-auto" method="post" action="/signup" style="max-width:650px;">
+	                <div class="h2 text-dark text-center my-4">SignUp</div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="email">User Name</label>
+                                <input type="text" name="name" class="form-control" id="name" placeholder="John Doe" required>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="email">E-Mail Address</label>
+                                <input type="text" name="email" class="form-control" id="email" placeholder="you@example.com" required>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="email">Mobile Number</label>
+                                <input type="text" name="mobile" class="form-control" id="mobile" placeholder="9999XXXXXX" required>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="email">Password</label>
+                                <input type="text" name="password" class="form-control" id="password" placeholder="Password" required>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="email">Gender</label>
+                                <span class="">
+                                  <input type="radio" class=" ml-3 mr-1" name="gender" class="form-control" id="gender" value="male" required autofocus> Male
+                                </span>
+                                <span class="">
+                                  <input type="radio" class=" ml-3 mr-1" name="gender" class="form-control" id="gender" value="female" required autofocus> Female
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <div class="h4 text-center my-2">
+                            <%
+                                String registerStatus = (String)request.getAttribute("SignupStatus");
+                                if(null != registerStatus)
+                                out.print(registerStatus);
+                            %>
+                            </div>
+                            <button type="submit" class="btn btn-dark ml-2"><i class="fas fa-user-tag"> Signup</i></button>
+                            <a href="userLogin.jsp" class="btn btn-primary mr-2"><i class="fas fa-user-plus"> Signin</i></a>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
-            <div class="col-md-3">
-                <div >
-                        <span class="text-light align-middle">
-                            <span id="validate-name"></span>
-                        </span>
-                </div>
-            </div>
+	    <%@ include file="footer.jsp" %>
         </div>
-        <div class="row">
-            <div class="col-md-3">
-                <label for="email" class="text-light h3">E-Mail Address</label>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <div class="input-group my-2 mx-2 ">
-                        <input type="text" name="email" class="form-control" id="email" placeholder="you@example.com" >
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div >
-                        <span class="text-light align-middle">
-                            <span id="validate-email"></span>
-                        </span>
-                </div>
-            </div>
         </div>
-	<div class="row">
-            <div class="col-md-3">
-                <label for="mobile" class="text-light h3">Mobile Number</label>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <div class="input-group my-2 mx-2 ">
-                        <input type="text" name="mobile" class="form-control" id="mobile" placeholder="9999XXXXXX" >
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div>
-                        <span class="text-light align-middle">
-                           <span id="validate-mobile"></span>
-                        </span>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <label for="password" class="text-light h3">Password</label>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <div class="input-group my-2 mx-2 ">
-                        <input type="password" name="password" class="form-control" id="password"
-                               placeholder="Password" >
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div>
-                        <span class="text-light align-middle">
-                            <span id="validate-password"></span>
-                        </span>
-                </div>
-            </div>
-        </div>
-        <!-- <div class="row">
-            <div class="col-md-3">
-                <label for="password" class="text-light h3">Confirm Password</label>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <div class="input-group my-2 mx-2 ">
-                        <input type="password" name="password-confirmation" class="form-control" id="password-confirm" placeholder="Re Enter" required>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-	<div class="row">
-            <div class="col-md-3">
-                <label for="gender" class="text-light h3">Gender</label>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <div class="input-group my-2 mx-2 ">
-                        <span class="text-light h3"><input type="radio" class=" ml-3 mr-1" name="gender" class="form-control" id="gender" value="male" required autofocus> Male</span>
-						<span class="text-light h3"><input type="radio" class=" ml-3 mr-1" name="gender" class="form-control" id="gender" value="female" required autofocus> Female</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-        
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-5 m-auto">
-                <button type="submit" class="btn btn-success"><i class="fa fa-user-plus"> Register</i></button>
-		<a href="userLogin.jsp" class="btn btn-primary"><i class="fas fa-user-tag"></i> Login</a>
-            </div>
-        </div>
-    </form>
-</div>
-	<%@ include file="footer.jsp" %>
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </body>
 </html>

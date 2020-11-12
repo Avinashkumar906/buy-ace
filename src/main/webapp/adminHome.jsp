@@ -43,24 +43,15 @@
                     </div>
                 </div>
             </div>
-               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 my-2">
-                <div class="card bg-light" >
-                <img class="card-img-top" src="/dist/images/admin1.png" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Update Products</h5>
-                        <a href="updateitem.jsp" class="btn btn-primary">Update <sup>*</sup></a>
-                    </div>
+           <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 my-2">
+            <div class="card bg-light" >
+            <img class="card-img-top" src="/dist/images/admin3.png" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Make Admin</h5>
+                    <a href="makeadmin.jsp" class="btn btn-primary">Make Admin</a>
                 </div>
-               </div>
-               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 my-2">
-                <div class="card bg-light" >
-                <img class="card-img-top" src="/dist/images/admin3.png" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Make Admin</h5>
-                        <a href="makeadmin.jsp" class="btn btn-primary">Make Admin</a>
-                    </div>
-                </div>
-               </div>
+            </div>
+           </div>
                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 my-2">
                 <div class="card bg-light" >
                 <img class="card-img-top" src="/dist/images/admin4.png" alt="Card image cap">

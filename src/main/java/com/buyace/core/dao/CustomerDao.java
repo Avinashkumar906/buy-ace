@@ -12,7 +12,7 @@ import com.buyace.core.hibernate.util.HibernateUtil;
 public class CustomerDao {
 	
 	public static int register(Customer user){
-		if(validateUser(user)==null) {
+		if(existingUser(user) == null) {
 			int i = 0;
 			SessionFactory factory = HibernateUtil.getSessionFactory();
 			System.out.println(user);
@@ -27,7 +27,24 @@ public class CustomerDao {
 		else
 			return 0;
 	}
-	
+	public static Customer existingUser(Customer user) {
+		SessionFactory factory = HibernateUtil.getSessionFactory();
+		Session session = factory.openSession();
+
+		String email = user.getEmail();
+		String password = user.getPassword();
+
+		session.beginTransaction();
+		List<Customer> rs = session.createQuery("from Customer where usermail='"+email+"'").list();
+		session.getTransaction().commit();
+		session.close();
+		if(rs.size() != 0)
+		{
+			return rs.get(0);
+		}
+		return null;
+	}
+
 	public static Customer validateUser(Customer user) {
 		SessionFactory factory = HibernateUtil.getSessionFactory();
 		Session session = factory.openSession();
