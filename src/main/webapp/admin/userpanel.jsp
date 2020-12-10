@@ -18,33 +18,35 @@
                 <div class="d-flex flex-column w-100">
                     <%@ include file="/header.jsp" %>
                     <div class="flex-fill">
-                        <div class="h1 text-center col-12 pt-2 ">Product Section</div>
-                        <div class="h1 text-center col-12 pb-2 "><a href='/form/addproduct.jsp' class='btn btn-outline-dark'>Add Product</a></div>
+                        <div class="h1 text-center col-12 pt-2 ">User Section</div>
                         <table class="table">
                           <thead class="thead-light">
                             <tr>
                               <th scope="col">Id</th>
-                              <th scope="col">Title</th>
-                              <th scope="col">Company</th>
-                              <th scope="col">Category</th>
+                              <th scope="col">Name</th>
+                              <th scope="col">Mobile</th>
+                              <th scope="col">Gender</th>
+                              <th scope="col">Role</th>
+                              <th scope="col">Email</th>
                               <th scope="col">Update</th>
                               <th scope="col">Remove</th>
                             </tr>
-                          </thead>
-                          <tbody>
-                          <%
-                            List<Product> list = ProductDao.fetchProduct();
-                            Iterator itr = list.iterator();
-                            if(itr.hasNext()){
-                                while(itr.hasNext()){
-                                    Product product = (Product)itr.next();
-                                    out.print("<tr><th>"+product.getProductId()+"</th><th>"+product.getProductName()+"</th><th>"+product.getCompanyName()+"</th><th>"+product.getCategory()+"</th><th><a href='/updateproduct?id="+product.getProductId()+" 'class='btn btn-primary'>Update</a></th><th><a href='/removeproduct?id="+product.getProductId()+" 'class='btn btn-primary'>Remove</a></th></tr>");
+                            </thead>
+                            <tbody>
+                            <%
+                                List<Customer> list = CustomerDao.fetchUser();
+                                Iterator itr = list.iterator();
+                                if(itr.hasNext()){
+                                    while(itr.hasNext()){
+                                        Customer customer = (Customer)itr.next();
+                                        out.print("<tr><th>"+customer.getUserid()+"</th><th>"+customer.getName()+"</th><th>"+customer.getMobile()+"</th><th>"+customer.getGender()+"</th><th>"+customer.getRole()+"</th><th>"+customer.getEmail()+"</th><th><a href='/makeadmin?id="+customer.getUserid()+" 'class='btn btn-primary'>MakeAdmin</a></th><th><a href='/removeuser?id="+customer.getUserid()+" 'class='btn btn-primary'>Remove</a></th></tr>");
+                                    }
                                 }
-                            } else {
-                                out.print("<tr><td colspan='6' class='text-center h2'>No product available!</td></tr>");
-                            }
+                                else{
+                                    out.print("<tr><td colspan='6' class='text-center h2'>No product available!</td></tr>");
+                                }
                             %>
-                          </tbody>
+                            </tbody>
                         </table>
                     </div>
                     <%@ include file="/footer.jsp" %>

@@ -3,12 +3,13 @@ package com.buyace.core.servlets;
 import java.io.File;
 import java.io.IOException;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.buyace.core.beans.Customer;
-
+@WebServlet("/makeadmin")
 public class MakeAdmin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -17,7 +18,7 @@ public class MakeAdmin extends HttpServlet {
 		int userId = Integer.parseInt(request.getParameter("id"));
 		Customer customer = com.buyace.core.dao.CustomerDao.getCustomer(userId);
 		com.buyace.core.dao.CustomerDao.makeAdmin(userId);
-		response.sendRedirect("makeadmin.jsp");
+		response.sendRedirect("/admin/userpanel.jsp");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
