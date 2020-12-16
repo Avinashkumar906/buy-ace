@@ -19,7 +19,7 @@
             <%@ include file="header.jsp" %>
             <div class="flex-fill">
                 <%
-                List<Product> list = ProductDao.fetchProduct("phone",request.getParameter("category"));
+                List<Product> list = ProductDao.fetchProduct("deal",request.getParameter("category"));
                 if(list.size()!=0){
                 ListIterator<Product> Iterator = list.listIterator();
                     while(Iterator.hasNext()){
@@ -32,8 +32,8 @@
                         out.print("<h4 class='card-title h4'>"+product.getProductName()+"</h4>");
                         out.print("<h6 class='card-text h6'>"+product.getCompanyName()+"</h6>");
                         out.print("<h6 class='card-text h6'>&#8377 "+product.getPrice()+"/-</h6>");
-                        out.print("<a href='/addtocart?id="+product.getProductId()+"' class='btn btn-dark'>Add To Cart</a> ");
-                        out.print("<a href='/viewItem.jsp?id="+product.getProductId()+"' class='btn btn-dark'>View</a>");
+                        out.print("<a href='ShoppingCart?id="+product.getProductId()+"' class='btn btn-dark'>Add To Cart</a> ");
+                        out.print("<a href='viewItem.jsp?id="+product.getProductId()+"' class='btn btn-dark'>View</a>");
                         out.print("</div></div></div>");
                     }
                 }

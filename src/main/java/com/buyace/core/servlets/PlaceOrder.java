@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.*;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,7 +13,7 @@ import javax.servlet.http.HttpSession;
 import org.hibernate.Session;
 
 import com.buyace.core.beans.*;
-
+@WebServlet("/placeorder")
 public class PlaceOrder extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -30,7 +31,7 @@ public class PlaceOrder extends HttpServlet {
 		if(orderId>=0) {
 			session.removeAttribute("cartitem");
 			request.setAttribute("order", orderHistory);
-			request.getRequestDispatcher("Confirmation").forward(request, response);
+			request.getRequestDispatcher("/confirmation").forward(request, response);
 		}
 		else {
 			response.getWriter().print("<script>alert('Order not Placed.! <br> TRY AGAIN..');(</script>");

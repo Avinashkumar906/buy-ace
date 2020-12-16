@@ -32,29 +32,13 @@
                     <a class="nav-link" href="/plan.jsp">Plan</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/deal">Deal</a>
+                    <a class="nav-link" href="/deal.jsp">Deal</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/accessory">Accessory</a>
+                    <a class="nav-link" href="/accessory.jsp">Accessory</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/contact">Contact Us</a>
-                </li>
-                <li class="nav-item dropdown d-none">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Category
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="categoryView.jsp?category=sport">Sports</a>
-                    <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="categoryView.jsp?category=mobile">Mobiles</a>
-                    <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="categoryView.jsp?category=book">Books</a>
-                    <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="categoryView.jsp?category=computer">Computers</a>
-                    <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="categoryView.jsp?category=cloth">Clothes</a>
-                    </div>
+                    <a class="nav-link" href="/contact.jsp">Contact Us</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/about.jsp">About us</a>

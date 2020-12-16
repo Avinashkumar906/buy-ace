@@ -29,13 +29,13 @@
             <div class="col-12 text-right">
               <a href="/index.jsp" class="text-light h4 bold mr-2"><i class="fas fa-home"> Home</i> </a>
             </div>
-            <div class="col-12 text-right">
-              <span class="text-light h6">Phone | </span>
-              <span class="text-light h6">Plan | </span>
-              <span class="text-light h6">Deal | </span>
-              <span class="text-light h6">Accessory | </span>
-              <span class="text-light h6">About | </span>
-              <span class="text-light mr-2 h6">Contact</span>
+            <div class="col-12 text-right text-light">
+              <span><a class="text-light h6" href="/phone.jsp">Phone </a>| </span>
+              <span><a class="text-light h6" href="/plan.jsp">Plan </a>| </span>
+              <span><a class="text-light h6" href="/deal.jsp">Deal </a>| </span>
+              <span><a class="text-light h6" href="/accessory.jsp">Accessory </a>| </span>
+              <span><a class="text-light h6" href="/about.jsp">About </a>| </span>
+              <span class="mr-2"><a class="text-light h6" href="/contact.jsp">Contact </a></span>
             </div>
           </div>
         </div>

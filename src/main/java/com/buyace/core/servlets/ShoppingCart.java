@@ -5,13 +5,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
 import com.buyace.core.beans.CartItem;
 import com.buyace.core.beans.Product;
 
-
-
+@WebServlet("/addtocart")
 public class ShoppingCart extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
@@ -41,8 +41,7 @@ public class ShoppingCart extends HttpServlet {
 				cartItem.add(new CartItem(product.getProductId(), product.getProductName(), product.getCompanyName(), product.getPrice()));		
 		}
 		session.setAttribute("cartitem", cartItem);
-		response.sendRedirect("home.jsp");
-		
+		response.sendRedirect("/index.jsp");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

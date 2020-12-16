@@ -32,7 +32,7 @@
                                         "<div class='text-center'><small>("+customer.getEmail()+")</small></div>"+
                                         "<h1 class='h4 text-center'>Contact :"+customer.getMobile()+" </h1>"+
                                         "<h1 class='h4 text-center'>Gender :"+customer.getGender()+"</h1>"+
-                                        " <div class='d-flex w-100 justify-content-between'><a href='/editprofile.jsp' class='btn btn-primary w-25'>Edit</a> "+
+                                        " <div class='d-flex w-100 justify-content-between my-2'><a href='javascript:void(0);' class='btn btn-primary disabled w-25'>Edit</a> "+
                                         " <a href='/orderhistory.jsp' class='btn btn-primary w-25'>Orders</a> "+
                                         " <a href='/logout' class='btn btn-danger w-25'>Logout</a> </div>"+
                                         "</div>"+

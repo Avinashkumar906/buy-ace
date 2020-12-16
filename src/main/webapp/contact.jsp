@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" isErrorPage="true"%>
+    pageEncoding="ISO-8859-1" errorPage="error.jsp"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,20 +18,21 @@
             <div class="d-flex flex-column w-100">
             <%@ include file="header.jsp" %>
                 <div class="flex-fill">
-                    <div class="text-center h2">
-                        <b class="text-warning">OOPS...! ERROR OCCURED..</b>
+                    <div class="my-5">
+                    <div class="h1 text-center col-12"><b>Contact us</b></div>
+                      <div class="container">
+                        <h2 class="text-center text-dark bg-light">-Write us-<h2>
+                        <h3 class=" text-center text-dark bg-light">buyace@buyace.com<p>
+
                     </div>
-                    <div class="d-block text-center"><%=exception.toString()%></div>
-                    <div class="d-block text-center">
-                        <a class="btn btn-primary my-2" href="/index.jsp"><i class="fas fa-cart-plus"></i> Go To Home</a>
                     </div>
+                 </div>
+                <%@ include file="footer.jsp" %>
                 </div>
-	        <%@ include file="footer.jsp" %>
+            </div>
         </div>
-        </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-</body>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    </body>
 </html>
