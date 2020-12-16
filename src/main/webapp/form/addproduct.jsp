@@ -51,11 +51,10 @@
                                 <label for="category">Category</label>
                                 <select name="category" class="form-control" required>
                                     <option class="py-2" selected></option>
-                                    <option value="sport" class="py-2">Sport</option>
                                     <option value="phone" class="py-2">Phone</option>
-                                    <option value="book" class="py-2">Book</option>
-                                    <option value="computer" class="py-2">Computer</option>
-                                    <option value="cloth" class="py-2">Cloth</option>
+                                    <option value="plan" class="py-2">Plan</option>
+                                    <option value="deals" class="py-2">Deal</option>
+                                    <option value="accessory" class="py-2">Accessory</option>
                                 </select>
                             </div>
                         </div>
@@ -115,11 +114,10 @@
                                 <label for="category">Category</label>
                                 <select name="category" class="form-control" required>
                                     <option class="py-2" selected></option>
-                                    <option value="sport" class="py-2">Sport</option>
-                                    <option value="mobile" class="py-2">Mobile</option>
-                                    <option value="book" class="py-2">Book</option>
-                                    <option value="computer" class="py-2">Computer</option>
-                                    <option value="cloth" class="py-2">Cloth</option>
+                                    <option value="phone" class="py-2">Phone</option>
+                                    <option value="plan" class="py-2">Plan</option>
+                                    <option value="deals" class="py-2">Deal</option>
+                                    <option value="accessory" class="py-2">Accessory</option>
                                 </select>
                             </div>
                         </div>

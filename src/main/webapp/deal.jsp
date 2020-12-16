@@ -19,7 +19,7 @@
             <%@ include file="header.jsp" %>
             <div class="flex-fill">
                 <%
-                List<Product> list = ProductDao.fetchProduct("deal",request.getParameter("category"));
+                List<Product> list = ProductDao.fetchProduct("deals",request.getParameter("category"));
                 if(list.size()!=0){
                 ListIterator<Product> Iterator = list.listIterator();
                     while(Iterator.hasNext()){
