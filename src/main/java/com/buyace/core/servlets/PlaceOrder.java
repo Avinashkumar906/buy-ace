@@ -30,12 +30,11 @@ public class PlaceOrder extends HttpServlet {
 		orderHistory.setOrderId(orderId);
 		if(orderId>=0) {
 			session.removeAttribute("cartitem");
-			request.setAttribute("order", orderHistory);
-			request.getRequestDispatcher("/confirmation").forward(request, response);
+			response.sendRedirect("/index.jsp");
 		}
 		else {
 			response.getWriter().print("<script>alert('Order not Placed.! <br> TRY AGAIN..');(</script>");
-			response.sendRedirect("checkout.jsp");
+			response.sendRedirect("/checkout.jsp");
 		}
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
